@@ -1,0 +1,32 @@
+
+
+<p> Hola desde article.html </p>
+{% for articulo in articles %}
+    <article class='article-item'>
+        <!-- para no mostrar icono de imagen si no hay -->
+        {% if articulo.imagen != 'null' and articulo.imagen.url|length >= 1 %} 
+            <div class='image'>
+                <img src="{{articulo.imagen.url}}" />
+            </div>
+        {% endif %}
+        
+        <div class='data'>
+            <p> <h2>{{articulo.id}}  - 
+                <a href="{% url 'article' articulo.id %}">{{articulo.title}} </a>- 
+                {{articulo.content|safe}} </h2>
+                <span> 
+                    {% for category in articulo.categories.all %}
+                        <a href="{% url 'category' category.id %}">{{category}} </a>
+                        {% if forloop.counter < articulo.categories.all|length %}
+                            {{','}}
+                        {% endif %}
+                    {% endfor %}
+
+                    <p>{{articulo.user}} </p>
+                    {{articulo.create_at}} 
+                </span>
+            </p>
+        </div>
+        <div class='clearfix'></div>
+    </article>
+{% endfor %}

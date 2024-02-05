@@ -1,0 +1,24 @@
+
+<div class="paginacion">
+
+    <!-- si tenemos paginas previas -->
+    {% if articles.has_previous %}
+        <a href="?page=1">&laquo; Primero </a>
+        <a href ="?page={{articles.previous_page_number }}">Anterior </a>
+            
+    {% endif %}
+
+    <!-- sPagina actual -->
+    <span class="actual">
+        Página {{ articles.number}} de {{ articles.paginator.num_pages}}
+    </span>
+
+    <!-- si tenemos paginas siguientes -->
+    {% if articles.has_next %}
+    <a href ="?page={{articles.next_page_number }}">Siguiente </a>
+    <a href="?page={{articles.paginator.num_pages}}">Ultimo &raquo; </a>
+    {% endif %}
+
+   
+
+</div>

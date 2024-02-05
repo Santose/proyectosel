@@ -1,0 +1,17 @@
+
+
+
+{% extends 'layouts/layout.html' %}
+
+{% block title %} {{title}} {% endblock %}
+
+
+{% block content %}
+
+<p> Lista de articulos</P>
+
+{% include 'articles/articles.html' %}
+
+{% include 'articles/pagination.html' %}
+
+{% endblock %}

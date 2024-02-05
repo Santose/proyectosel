@@ -1,0 +1,23 @@
+
+
+
+{% extends 'layouts/layout.html' %}
+
+{% block title %} {{article.title}} {% endblock %}
+
+
+{% block content %}
+
+        <!-- para no mostrar icono de imagen si no hay -->
+{% if article.imagen != 'null' and article.imagen.url|length >= 1 %} 
+    <div class='image'>
+        <img src="{{article.imagen.url}}" />
+    </div>
+{% endif %}
+
+<p> {{article.content|safe}} </P>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+
+
+{% extends 'layouts/layout.html' %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block content %}
+
+    <!-- mostrar todos los errores del formulario-->
+    {{ register_form.errors}}
+
+<p> {{title}} </P>
+
+        <form method='post' action=''>
+            <!-- solo para formularios internos sino tendriamos una vulnerabilidad-->
+            {% csrf_token %}
+
+            {% comment %}
+                {{ register_form.as_p}}
+            {% endcomment %}
+            {% comment %}
+            {{register_form.username.label}}
+            {{register_form.username}}
+            {% endcomment %}
+
+            <!-- recorremos todos los campos del formulario -->
+            {% for field in register_form %}
+                <label>{{field.label}} </label>
+                {{field}}
+            {% endfor %}
+
+            <input type='submit' value='registrarse' />
+        </form>
+
+{% endblock %}

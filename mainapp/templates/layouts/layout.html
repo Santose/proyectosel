@@ -1,0 +1,90 @@
+
+
+
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Django" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            <!-- titulo de cada pagina -->
+        {% endblock %}
+        | Santos esteban
+    </title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/styles6.css' %}" />
+
+</head>
+<body>
+
+    <!-- cabecera-->
+    <header>
+        <div id="logotipo">
+            <!-- logotipo-->
+            <img src="{% static 'images/logo.png' %}" />
+            <h1> ProyectoSel con Django</h1>
+        </div>
+
+    </header>
+
+    <!-- menu de navegacion-->
+    <nav>
+        <ul>
+            <li> <a href="{% url 'index' %}">Index </a> </li>
+            {% if user.email %}                
+                <li> <a href="{% url 'articulos' %}">Categorias </a> 
+                    <ul>
+                        {% for categorie in categories %}
+                        <li> <a href="{% url 'category' categorie.0 %}">{{categorie.1}} </a> </li>
+                        {% endfor %}
+
+                    </ul> 
+                
+                </li>
+                {% for page in pages %}
+                    <li> <a href="{% url 'page' page.2 %}">{{page.1}}</a> </li>
+                {% endfor %}
+            {% endif %}
+            
+            {% if user.email is Not  %}
+                <li> <a href="{% url 'register' %}">registro</a> 
+                <li> <a href="{% url 'login' %}">login</a> 
+            {% endif %}
+
+            {% if user.email %}
+                <li> <a href="{% url 'logout' %}">logout</a> 
+            {% endif %}
+        </ul>
+
+    </nav>
+
+    <div class="barra">
+        <span class="esquina-izquierda"></span>
+        <span class="esquina-derecha"></span>
+        <span class="relleno-barra"></span>
+    </div>
+
+
+    <!-- contenido-->
+    
+    <div id="content">
+        <div class="box">
+            <h2 Titulo ssde prueba</h2>
+            {% block content %}
+            <!-- contenido de las templates-->
+            <strong> Este contenido es del layout original </strong>
+            {% endblock %}
+        </div>
+    </div>
+
+    <!-- pie -->
+    <footer>
+        Master en Python &copy; SEL - {% now "d/m/Y h:m:s" %}
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif,Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+body{
+    background-color: #f2f2f2;
+}
+
+/* estilos cabecera */
+header{
+    width: 1212px;
+    height: 140px;
+    background-color: #23282b;
+    margin: 0px auto;
+}
+
+
+#logotipo {
+    width: 40%;
+    height: 140pc;
+    margin: 0 auto;
+
+}
+
+#logotipo img{
+    display:  block;
+    width: 50px;
+    float: left;
+    margin-top: 40px;
+}
+
+#logotipo h1{
+    display: block;
+    float: left;
+    margin-top: 50px;
+    margin-left: 20px;
+    letter-spacing: 2px;
+    font-weight: lighter;
+    color: #42a196;
+}
+
+/* Estilos barra de navegacion */
+nav{
+    width: 1250px;
+    height: 40px;
+    margin: 0 auto;
+    background-color: #1b1f1f;
+    border: 1px solid #333333;
+    box-shadow: 0px 22px 22px grey;
+    font-size: 15px;
+    /*margin-bottom: 145px;*/ 
+}
+
+nav ul{
+    list-style: none;
+    text-decoration: none;
+}
+nav ul li{
+    line-height: 40px;
+    float: left;
+
+}
+nav ul li a{
+    display: block;
+    padding-left: 20px;
+    padding-right: 10px;
+    color: grey;
+
+}
+nav ul li a:hover{
+    background: white ;
+    box-shadow: 0px 0px 5px #333333 inset;
+    transition: all 700ms;
+}
+
+.barra{
+    width: 1250px;
+    margin: 0 auto;
+    /*margin-bottom: 140px;*/
+}
+
+.esquina-izquierda{
+    display: block;
+    border-left: 20px solid transparent;
+    border-top: 10px solid #2b2f3b;
+    float: left;
+}
+
+.esquina-derecha{
+    display: block;
+    border-right: 20px solid transparent;
+    border-top: 10px solid #2b2f3b;
+    float: right;
+}
+
+.relleno-barra{
+    display: block;
+    width: 1210px;
+    height: 10px;
+    background: #2b2f3b;
+    float: left;
+    margin-bottom: 30px;
+}
+
+/* esgtilos contenido central  */
+#content{
+    width: 1212px;
+    min-height: 930px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    margin-top: 0px;
+}
+
+.box{
+    background: white;
+    width: 95%;
+    min-height: 930px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    margin: 0 auto;
+}
+.title{
+    color: #444;
+    letter-spacing: 1px;
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin: 5px;
+}
+
+.box form{
+    width: 40%;
+}
+.box form input,
+.box form label{
+    display: block;
+    padding: 5px;
+}
+.box form input,
+.box form textarea{
+    width: 100%;
+}
+.box form input[type="submit"],
+.box form input[type="button"],
+.box form button{
+    background: green;
+}
+footer{
+    width: 1250px;
+    background-color: #1b1e1f;
+    border: 1px solid #333;
+    color: #d1d4d6;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    box-shadow: 0px 0px 20px gray;
+}

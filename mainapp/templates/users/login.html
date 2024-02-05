@@ -1,0 +1,32 @@
+
+{% extends 'layouts/layout.html' %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block content %}
+
+    <!-- mostrar todos los errores del formulario-->
+    {{ register_form.errors}}
+
+    {% if messages %}
+    {% for mensaje in messages %}
+        <div class='mensaje' >{{mensaje}} </div>
+    {% endfor %}
+
+{% endif %}
+
+<p> {{title}} </P>
+
+        <form method='post' action=''>
+            <!-- solo para formularios internos sino tendriamos una vulnerabilidad-->
+            {% csrf_token %}
+
+            <label for='username'>Usuario </label>
+            <input type='text' name='username' />
+            <label for='password'>Password </label>
+            <input type='password' name='password' />
+
+            <input type='submit' value='Login' />
+        </form>
+
+{% endblock %}
